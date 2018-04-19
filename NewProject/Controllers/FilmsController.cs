@@ -27,9 +27,19 @@ namespace NewProject.Controllers
         {
             return View(repos.Films);
         }
+        public IActionResult Index1(String Search)
+        {
+            if (!String.IsNullOrEmpty(Search))
+            {
+                var list = repos.Films.Where(x => (x.Name.Contains(Search)));
+                return View("Index", list);
+            }
 
-        // GET: Films/Details/5
-        public IActionResult Details(int? id)
+            return View("Index", repos.Films);
+        }
+
+            // GET: Films/Details/5
+            public IActionResult Details(int? id)
         {
             if (id == null)
             {
