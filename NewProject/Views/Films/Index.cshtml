@@ -80,7 +80,15 @@
 
                 <h2>@Html.DisplayFor(modelItem => item.Name)</h2>
                 <span>
-                    <img id="img_@item.ID" src ="images/promo2.jpg" onclick="resizeUp(this)" ondblclick="resizeDown(this)" >
+                    
+                    @if (item.ImageData == null)
+                    {<img src="~/images/no_image.jpg" onclick="resizeUp(this)" ondblclick="resizeDown(this)"/>}
+
+                    else
+                    {
+                        <img src="data:image/jpg;base64,@(Convert.ToBase64String(item.ImageData))" onclick="resizeUp(this)" ondblclick="resizeDown(this)"/>
+
+                    }
                     <p>@Html.DisplayFor(modelItem => item.Description)</p>
                     
                 </span>

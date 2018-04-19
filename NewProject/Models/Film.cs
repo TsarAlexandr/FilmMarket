@@ -1,7 +1,9 @@
-﻿using Microsoft.AspNetCore.Mvc.ModelBinding;
+﻿using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc.ModelBinding;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -50,6 +52,9 @@ namespace NewProject.Models
                     _price = value;
             }
         }
+        [NotMapped]
+        public IFormFile ImageMimeType { get; set; }
+        public byte[] ImageData { get; set; }
 
         public bool isPriceCorrect(string value)
         {

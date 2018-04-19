@@ -165,7 +165,7 @@ namespace NewProject.Test
         {
             FilmsController controller = new FilmsController(repos.Object);
 
-            var res = controller.Edit(1, films.ElementAt(1)) as NotFoundResult;
+            var res = controller.Edit(1, films.ElementAt(1), null) as NotFoundResult;
 
             Assert.AreEqual(404, res.StatusCode);
         }
@@ -181,7 +181,7 @@ namespace NewProject.Test
 
             controller.ModelState.AddModelError("Invalid price", "error");
 
-            controller.Edit(5, film);
+            controller.Edit(5, film, null);
 
             repos.Verify(m => m.updateFilm(It.IsAny<Film>()), Times.Never);
         }
@@ -193,7 +193,7 @@ namespace NewProject.Test
 
             FilmsController controller = new FilmsController(repos.Object);
 
-            var res = controller.Edit(2, films.ElementAt(1)) as RedirectToActionResult;
+            var res = controller.Edit(2, films.ElementAt(1), null) as RedirectToActionResult;
 
             Assert.AreEqual("Index", res.ActionName);
         }
@@ -208,7 +208,7 @@ namespace NewProject.Test
 
             FilmsController controller = new FilmsController(repos.Object);
 
-            var res = controller.Edit(6, film) as NotFoundResult;
+            var res = controller.Edit(6, film, null) as NotFoundResult;
 
             Assert.AreEqual(404, res.StatusCode);
         }
@@ -220,7 +220,7 @@ namespace NewProject.Test
 
             FilmsController controller = new FilmsController(repos.Object);
 
-            Assert.ThrowsException<Exception>(() => controller.Edit(2, films.ElementAt(1)));
+            Assert.ThrowsException<Exception>(() => controller.Edit(2, films.ElementAt(1), null));
 
         }
 

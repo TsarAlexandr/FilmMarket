@@ -8,6 +8,8 @@ using Microsoft.EntityFrameworkCore;
 using NewProject.Data;
 using NewProject.Models;
 using Microsoft.AspNetCore.Authorization;
+using System.IO;
+using Microsoft.AspNetCore.Http;
 
 namespace NewProject.Controllers
 {
@@ -53,10 +55,21 @@ namespace NewProject.Controllers
         [Authorize(Roles = "admin")]
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult Create([Bind("ID,Rating,Name,Description,Price")] Film film)
+        public IActionResult Create([Bind("ID,Rating,Name,Description,Price,ImageMimeType")] Film film)
         {
             if (ModelState.IsValid)
             {
+                if (film.ImageMimeType != null)
+                {
+                    byte[] imageData = null;
+                    
+                    using (var binaryReader = new BinaryReader(film.ImageMimeType.OpenReadStream()))
+                    {
+                        imageData = binaryReader.ReadBytes((int)film.ImageMimeType.Length);
+                    }
+                    
+                    film.ImageData = imageData;
+                }
                 repos.addFilm(film);
                 return RedirectToAction(nameof(Index));
             }
@@ -84,7 +97,7 @@ namespace NewProject.Controllers
         [Authorize(Roles = "admin")]
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult Edit(int id, [Bind("ID,Rating,Name,Description,Price")] Film film)
+        public IActionResult Edit(int id, [Bind("ID,Rating,Name,Description,Price")] Film film, IFormFile ImageMimeType)
         {
             if (id != film.ID)
             {
@@ -95,6 +108,17 @@ namespace NewProject.Controllers
             {
                 try
                 {
+                    if (ImageMimeType != null)
+                    {
+                        byte[] imageData = null;
+
+                        using (var binaryReader = new BinaryReader(ImageMimeType.OpenReadStream()))
+                        {
+                            imageData = binaryReader.ReadBytes((int)ImageMimeType.Length);
+                        }
+
+                        film.ImageData = imageData;
+                    }
                     repos.updateFilm(film);
                 }
                 catch (DbUpdateException)
