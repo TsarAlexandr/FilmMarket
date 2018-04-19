@@ -1,0 +1,16 @@
+c:\users\царь александр\source\repos\NewProject\NewProject.Test\bin\Debug\netcoreapp2.0\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll
+c:\users\царь александр\source\repos\NewProject\NewProject.Test\bin\Debug\netcoreapp2.0\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface.dll
+c:\users\царь александр\source\repos\NewProject\NewProject.Test\bin\Debug\netcoreapp2.0\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll
+c:\users\царь александр\source\repos\NewProject\NewProject.Test\bin\Debug\netcoreapp2.0\NewProject.Test.deps.json
+c:\users\царь александр\source\repos\NewProject\NewProject.Test\bin\Debug\netcoreapp2.0\NewProject.Test.runtimeconfig.json
+c:\users\царь александр\source\repos\NewProject\NewProject.Test\bin\Debug\netcoreapp2.0\NewProject.Test.runtimeconfig.dev.json
+c:\users\царь александр\source\repos\NewProject\NewProject.Test\bin\Debug\netcoreapp2.0\NewProject.Test.dll
+c:\users\царь александр\source\repos\NewProject\NewProject.Test\bin\Debug\netcoreapp2.0\NewProject.dll
+c:\users\царь александр\source\repos\NewProject\NewProject.Test\bin\Debug\netcoreapp2.0\NewProject.pdb
+c:\users\царь александр\source\repos\NewProject\NewProject.Test\obj\Debug\netcoreapp2.0\NewProject.Test.csprojResolveAssemblyReference.cache
+c:\users\царь александр\source\repos\NewProject\NewProject.Test\obj\Debug\netcoreapp2.0\NewProject.Test.csproj.CoreCompileInputs.cache
+c:\users\царь александр\source\repos\NewProject\NewProject.Test\obj\Debug\netcoreapp2.0\NewProject.Test.AssemblyInfoInputs.cache
+c:\users\царь александр\source\repos\NewProject\NewProject.Test\obj\Debug\netcoreapp2.0\NewProject.Test.AssemblyInfo.cs
+c:\users\царь александр\source\repos\NewProject\NewProject.Test\bin\Debug\netcoreapp2.0\NewProject.Test.pdb
+c:\users\царь александр\source\repos\NewProject\NewProject.Test\obj\Debug\netcoreapp2.0\NewProject.Test.dll
+c:\users\царь александр\source\repos\NewProject\NewProject.Test\obj\Debug\netcoreapp2.0\NewProject.Test.pdb

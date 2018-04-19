@@ -1,0 +1,72 @@
+﻿@model NewProject.Models.Film
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<head>
+    <link href="~/css/style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<h2>Details</h2>
+
+<div>
+    <h4>Film</h4>
+    <hr />
+    @*<dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Rating)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Rating)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Description)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Description)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Price)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Price)
+        </dd>
+    </dl>*@
+</div>
+
+<div class="details">
+    <h3>@Html.DisplayFor(model => model.Name)</h3>
+    <img src="~/images/promo2.jpg">
+    <p>@Html.DisplayFor(model => model.Description)</p>
+    <dl>
+        <dt>
+            @Html.DisplayNameFor(model => model.Rating)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Rating)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Price)
+        </dt>
+        <dd>
+            $@Html.DisplayFor(model => model.Price)
+        </dd>
+    </dl>
+
+
+
+
+</div>
+
+
+
+<div>
+        <a asp-action="Index">Back to List</a>
+</div>

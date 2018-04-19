@@ -1,0 +1,36 @@
+c:\users\царь александр\source\repos\NewProject\NewProject\bin\Debug\netcoreapp2.0\NewProject.deps.json
+c:\users\царь александр\source\repos\NewProject\NewProject\bin\Debug\netcoreapp2.0\NewProject.runtimeconfig.json
+c:\users\царь александр\source\repos\NewProject\NewProject\bin\Debug\netcoreapp2.0\NewProject.runtimeconfig.dev.json
+c:\users\царь александр\source\repos\NewProject\NewProject\bin\Debug\netcoreapp2.0\NewProject.dll
+c:\users\царь александр\source\repos\NewProject\NewProject\bin\Debug\netcoreapp2.0\NewProject.pdb
+c:\users\царь александр\source\repos\NewProject\NewProject\obj\Debug\netcoreapp2.0\NewProject.csprojResolveAssemblyReference.cache
+c:\users\царь александр\source\repos\NewProject\NewProject\obj\Debug\netcoreapp2.0\NewProject.csproj.CoreCompileInputs.cache
+c:\users\царь александр\source\repos\NewProject\NewProject\obj\Debug\netcoreapp2.0\UserSecretsAssemblyInfo.cs
+c:\users\царь александр\source\repos\NewProject\NewProject\obj\Debug\netcoreapp2.0\NewProject.AssemblyInfoInputs.cache
+c:\users\царь александр\source\repos\NewProject\NewProject\obj\Debug\netcoreapp2.0\NewProject.AssemblyInfo.cs
+c:\users\царь александр\source\repos\NewProject\NewProject\obj\Debug\netcoreapp2.0\NewProject.dll
+c:\users\царь александр\source\repos\NewProject\NewProject\obj\Debug\netcoreapp2.0\NewProject.pdb
+T:\Учёба\5 семестр\Модульное тестирование\NewProject\NewProject\bin\Debug\netcoreapp2.0\NewProject.deps.json
+T:\Учёба\5 семестр\Модульное тестирование\NewProject\NewProject\bin\Debug\netcoreapp2.0\NewProject.runtimeconfig.json
+T:\Учёба\5 семестр\Модульное тестирование\NewProject\NewProject\bin\Debug\netcoreapp2.0\NewProject.runtimeconfig.dev.json
+T:\Учёба\5 семестр\Модульное тестирование\NewProject\NewProject\bin\Debug\netcoreapp2.0\NewProject.dll
+T:\Учёба\5 семестр\Модульное тестирование\NewProject\NewProject\bin\Debug\netcoreapp2.0\NewProject.pdb
+T:\Учёба\5 семестр\Модульное тестирование\NewProject\NewProject\obj\Debug\netcoreapp2.0\NewProject.csprojResolveAssemblyReference.cache
+T:\Учёба\5 семестр\Модульное тестирование\NewProject\NewProject\obj\Debug\netcoreapp2.0\NewProject.csproj.CoreCompileInputs.cache
+T:\Учёба\5 семестр\Модульное тестирование\NewProject\NewProject\obj\Debug\netcoreapp2.0\UserSecretsAssemblyInfo.cs
+T:\Учёба\5 семестр\Модульное тестирование\NewProject\NewProject\obj\Debug\netcoreapp2.0\NewProject.AssemblyInfoInputs.cache
+T:\Учёба\5 семестр\Модульное тестирование\NewProject\NewProject\obj\Debug\netcoreapp2.0\NewProject.AssemblyInfo.cs
+T:\Учёба\5 семестр\Модульное тестирование\NewProject\NewProject\obj\Debug\netcoreapp2.0\NewProject.dll
+T:\Учёба\5 семестр\Модульное тестирование\NewProject\NewProject\obj\Debug\netcoreapp2.0\NewProject.pdb
+T:\Учёба\6 семестр\Web\NewProject\NewProject\bin\Debug\netcoreapp2.0\NewProject.deps.json
+T:\Учёба\6 семестр\Web\NewProject\NewProject\bin\Debug\netcoreapp2.0\NewProject.runtimeconfig.json
+T:\Учёба\6 семестр\Web\NewProject\NewProject\bin\Debug\netcoreapp2.0\NewProject.runtimeconfig.dev.json
+T:\Учёба\6 семестр\Web\NewProject\NewProject\bin\Debug\netcoreapp2.0\NewProject.dll
+T:\Учёба\6 семестр\Web\NewProject\NewProject\bin\Debug\netcoreapp2.0\NewProject.pdb
+T:\Учёба\6 семестр\Web\NewProject\NewProject\obj\Debug\netcoreapp2.0\NewProject.csprojResolveAssemblyReference.cache
+T:\Учёба\6 семестр\Web\NewProject\NewProject\obj\Debug\netcoreapp2.0\NewProject.csproj.CoreCompileInputs.cache
+T:\Учёба\6 семестр\Web\NewProject\NewProject\obj\Debug\netcoreapp2.0\UserSecretsAssemblyInfo.cs
+T:\Учёба\6 семестр\Web\NewProject\NewProject\obj\Debug\netcoreapp2.0\NewProject.AssemblyInfoInputs.cache
+T:\Учёба\6 семестр\Web\NewProject\NewProject\obj\Debug\netcoreapp2.0\NewProject.AssemblyInfo.cs
+T:\Учёба\6 семестр\Web\NewProject\NewProject\obj\Debug\netcoreapp2.0\NewProject.dll
+T:\Учёба\6 семестр\Web\NewProject\NewProject\obj\Debug\netcoreapp2.0\NewProject.pdb

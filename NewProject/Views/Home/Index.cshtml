@@ -1,0 +1,93 @@
+﻿@using Microsoft.AspNetCore.Identity
+@using NewProject.Models
+
+@inject SignInManager<ApplicationUser> SignInManager
+@inject UserManager<ApplicationUser> UserManager
+<html>
+<head>
+    @{
+        Layout = null;
+    }
+
+
+    <link href="~/css/bootstrap.css" rel='stylesheet' type='text/css' />
+    <link href="~/css/style.css" rel="stylesheet" type="text/css" media="all" />
+    <link rel="stylesheet" href="~/css/site.min.css"  />
+    
+    <script type="text/javascript" src="~/js/jquery-1.11.1.min.js"></script>
+    <script src="~/js/responsiveslides.min.js"></script>
+    <script>
+        $(function () {
+            $("#slider").responsiveSlides({
+                auto: true,
+                speed: 500,               
+                
+            });
+        });
+    </script>
+</head>
+<body>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <a asp-area="" asp-controller="Films" asp-action="Index" class="navbar-brand">Films</a>
+                <a asp-area="" asp-controller="Home" asp-action="Index" class="navbar-brand">Home</a>
+                <a asp-area="" asp-controller="Home" asp-action="About" class="navbar-brand">About</a>
+                <a asp-area="" asp-controller="Home" asp-action="Contact" class="navbar-brand">Contact</a>
+                <a asp-area="" asp-controller="Home" asp-action="Navigator" class="navbar-brand">Lab2</a>
+
+            </div>
+            <div class="navbar-collapse collapse">
+                @await Html.PartialAsync("_LoginPartial")
+            </div>
+
+            </div>
+ </nav>
+                
+                    
+                          <ul class="rslides" id="slider">
+                                <li>
+                                    <img src="images/banner.jpg" class="img-responsive" alt="" />
+                                    <div class="button">
+                                        <a asp-area="" asp-controller="Films" asp-action="Index" >To Films</a>
+                                    </div>
+                                </li>
+                                <li>
+                                    <img src="images/banner1.jpg" class="img-responsive" alt="" />
+                                    <div class="button">
+                                        <a asp-area="" asp-controller="Films" asp-action="Index" >To Films</a>
+                                    </div>
+                                </li>
+                                <li>
+                                    <img src="images/banner2.jpg" class="img-responsive" alt="" />
+                                    <div class="button">
+                                        <a asp-area="" asp-controller="Films" asp-action="Index" >To Films</a>
+                                    </div>
+                                </li>
+                                <li>
+                                    <img src="images/banner3.jpg" class="img-responsive" alt="" />
+                                    <div class="button">
+                                        <a asp-area="" asp-controller="Films" asp-action="Index" >To Films</a>
+                                    </div>
+                                </li>
+                                <li>
+                                    <img src="images/banner4.jpg" class="img-responsive" alt="" />
+                                    <div class="button">
+                                        <a asp-area="" asp-controller="Films" asp-action="Index" >To Films</a>
+                                    </div>
+                                </li>
+                                <li>
+                                    <img src="images/banner5.jpg" class="img-responsive" alt="" />
+                                    <div class="button">
+                                        <a asp-area="" asp-controller="Films" asp-action="Index" >To Films</a>
+                                    </div>
+                                </li>
+                            </ul>
+                        
+
+    <footer class="foot-text" >
+        <p>&copy; 2018 - Web-Application Development</p>
+    </footer>
+               
+</body>
+</html>

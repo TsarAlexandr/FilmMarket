@@ -1,0 +1,11 @@
+C:\Users\Царь Александр\source\repos\NewProject\.vs\NewProject\lut\0\b\NewProject\Debug\netcoreapp2.0\NewProject.deps.json
+C:\Users\Царь Александр\source\repos\NewProject\.vs\NewProject\lut\0\b\NewProject\Debug\netcoreapp2.0\NewProject.runtimeconfig.json
+C:\Users\Царь Александр\source\repos\NewProject\.vs\NewProject\lut\0\b\NewProject\Debug\netcoreapp2.0\NewProject.runtimeconfig.dev.json
+C:\Users\Царь Александр\source\repos\NewProject\.vs\NewProject\lut\0\b\NewProject\Debug\netcoreapp2.0\NewProject.dll
+C:\Users\Царь Александр\source\repos\NewProject\.vs\NewProject\lut\0\b\NewProject\Debug\netcoreapp2.0\NewProject.pdb
+C:\Users\Царь Александр\source\repos\NewProject\.vs\NewProject\lut\0\i\NewProject\Debug\netcoreapp2.0\NewProject.csprojResolveAssemblyReference.cache
+C:\Users\Царь Александр\source\repos\NewProject\.vs\NewProject\lut\0\i\NewProject\Debug\netcoreapp2.0\NewProject.csproj.CoreCompileInputs.cache
+C:\Users\Царь Александр\source\repos\NewProject\.vs\NewProject\lut\0\i\NewProject\Debug\netcoreapp2.0\NewProject.AssemblyInfoInputs.cache
+C:\Users\Царь Александр\source\repos\NewProject\.vs\NewProject\lut\0\i\NewProject\Debug\netcoreapp2.0\NewProject.AssemblyInfo.cs
+C:\Users\Царь Александр\source\repos\NewProject\.vs\NewProject\lut\0\i\NewProject\Debug\netcoreapp2.0\NewProject.dll
+C:\Users\Царь Александр\source\repos\NewProject\.vs\NewProject\lut\0\i\NewProject\Debug\netcoreapp2.0\NewProject.pdb

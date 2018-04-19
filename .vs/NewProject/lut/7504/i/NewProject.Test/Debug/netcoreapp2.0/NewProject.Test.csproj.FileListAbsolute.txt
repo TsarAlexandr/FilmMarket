@@ -1,0 +1,4 @@
+C:\Users\Царь Александр\source\repos\NewProject\.vs\NewProject\lut\0\i\NewProject.Test\Debug\netcoreapp2.0\NewProject.Test.csprojResolveAssemblyReference.cache
+C:\Users\Царь Александр\source\repos\NewProject\.vs\NewProject\lut\0\i\NewProject.Test\Debug\netcoreapp2.0\NewProject.Test.csproj.CoreCompileInputs.cache
+C:\Users\Царь Александр\source\repos\NewProject\.vs\NewProject\lut\0\i\NewProject.Test\Debug\netcoreapp2.0\NewProject.Test.AssemblyInfoInputs.cache
+C:\Users\Царь Александр\source\repos\NewProject\.vs\NewProject\lut\0\i\NewProject.Test\Debug\netcoreapp2.0\NewProject.Test.AssemblyInfo.cs

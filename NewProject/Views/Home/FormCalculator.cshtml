@@ -1,0 +1,134 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    <link href="~/css/style.css" rel="stylesheet" type="text/css">
+    <title>Calculator</title>
+    </head>
+<body>
+
+    <script>
+        function calculate() {
+            var x, y, z, x1, y1, z1;
+            x = parseFloat((document.getElementById("x")).value);
+            y = parseFloat((document.getElementById("y")).value);
+            z = parseFloat((document.getElementById("z")).value);
+            x1 = parseFloat((document.getElementById("x1")).value);
+            y1 = parseFloat((document.getElementById("y1")).value);
+            z1 = parseFloat((document.getElementById("z1")).value);
+            var selector = parseInt(document.getElementById("selector").value);
+
+            var cos = (x * x1 + y * y1 + z * z1) / (Math.sqrt(x * x + y * y + z * z) *
+                Math.sqrt(x1 * x1 + y1 * y1 + z1 * z1));
+
+            if (cos > 1 || cos.isNan)
+            { 
+                alert("Некоректное значение");
+                return;
+            }
+
+            var resultRad = Math.acos(cos);
+            var resultDeg = (resultRad * 180) / Math.PI;
+
+            var resFieldRad = document.getElementById("resRad");
+            var resFieldDeg = document.getElementById("resDeg");
+
+            resFieldRad.innerHTML = resultRad.toFixed(selector);
+            resFieldDeg.innerHTML = resultDeg.toFixed(selector);
+         
+
+           
+        }
+
+        function getGeneralSal()
+        {
+            var price = parseFloat(document.getElementById('price').value);
+            var mounth = parseFloat(document.getElementById('mounth').value);
+            var percent = parseFloat(document.getElementById('percent').value);
+            var places = parseFloat(document.getElementById('place').value)
+            var result = (price * mounth * places) * (percent / 100);
+            
+            var res = document.getElementById('resArea');
+            res.innerHTML = result.toString();
+            
+        }
+        </script>
+
+<div class="equalses">
+    <div class="equals">
+        <input id="x"/>
+        <label> x + </label>
+        <input id="y"/>
+        <label> y + </label>
+        <input id="z"/>
+        <label> z + </label>
+        <input />
+        <label> = 0 </label>
+     </div>
+    <br/><br/>
+    <div class="equals">
+        <input id="x1"/>
+        <label> x1 + </label>
+        <input id="y1"/>
+        <label> y1 + </label>
+        <input id="z1"/>
+        <label> z1 + </label>
+        <input />
+        <label> = 0 </label>
+    </div>
+    <br /><br />
+    <label>Количество знаков после запятой   </label>
+    <select id="selector">
+        <option value ="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+    </select>
+    <br/><br/>
+    <input type="button" value="Calculate" onclick="calculate()">
+    <br /><hr/><br />
+    <table>
+        <tr>
+            <td>Результат в радианах: </td>
+            <td><span id="resRad"></span></td>
+        </tr>
+        <tr>
+            <td>Результат в градусах: </td>
+            <td><span id="resDeg"></span><td>
+        </tr>
+    </table>
+    <br/><br/><hr/>
+    <h1>Доходы кинотеатра</h1>
+    <dl>
+        <dt><label>Цена билета (в рублях)</label></dt>
+        <dd><input id="price" placeholder="5" /></dd>
+        <dt><label>Количество мест</label></dt>
+        <dd><input id="place" placeholder="5" /></dd>
+        <dt><label>Период (в днях)   </label></dt>
+        <dd><input id="mounth" placeholder="5" /></dd>
+        <dt><label>Доля дистрибьютера %</label></dt>
+        <dd><input id="percent" placeholder="75 " /></dd>
+        </dl>
+    
+    
+    <input type="button" value="Рассчитать доход" onclick="getGeneralSal()">
+    
+    <table>
+        <tr>
+            <td>Доход кинотеатра от реализации фильма</td>
+            <td><span id="resArea"></span></td>
+        </tr>
+    </table>
+  </div> 
+    
+        
+        
+
+</body>
+</html>
+
