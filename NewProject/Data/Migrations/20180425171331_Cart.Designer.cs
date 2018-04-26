@@ -6,15 +6,15 @@ using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage;
 using Microsoft.EntityFrameworkCore.Storage.Internal;
 using NewProject.Data;
-using NewProject.Models;
 using System;
 
 namespace NewProject.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20180425171331_Cart")]
+    partial class Cart
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -180,20 +180,6 @@ namespace NewProject.Data.Migrations
                     b.ToTable("AspNetUsers");
                 });
 
-            modelBuilder.Entity("NewProject.Models.Cities", b =>
-                {
-                    b.Property<int>("ID")
-                        .ValueGeneratedOnAdd();
-
-                    b.Property<string>("City");
-
-                    b.Property<int>("District");
-
-                    b.HasKey("ID");
-
-                    b.ToTable("Cities");
-                });
-
             modelBuilder.Entity("NewProject.Models.Film", b =>
                 {
                     b.Property<int>("ID")
@@ -217,22 +203,6 @@ namespace NewProject.Data.Migrations
                     b.HasKey("ID");
 
                     b.ToTable("Film");
-                });
-
-            modelBuilder.Entity("NewProject.Models.Order", b =>
-                {
-                    b.Property<int>("ID")
-                        .ValueGeneratedOnAdd();
-
-                    b.Property<int?>("CityID");
-
-                    b.Property<int>("District");
-
-                    b.HasKey("ID");
-
-                    b.HasIndex("CityID");
-
-                    b.ToTable("Order");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
@@ -278,13 +248,6 @@ namespace NewProject.Data.Migrations
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade);
-                });
-
-            modelBuilder.Entity("NewProject.Models.Order", b =>
-                {
-                    b.HasOne("NewProject.Models.Cities", "City")
-                        .WithMany()
-                        .HasForeignKey("CityID");
                 });
 #pragma warning restore 612, 618
         }

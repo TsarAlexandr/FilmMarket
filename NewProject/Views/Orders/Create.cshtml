@@ -1,0 +1,71 @@
+﻿@model NewProject.Models.Order
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h2>Create</h2>
+
+<h4>Order</h4>
+<hr />
+
+<script>
+$(document).ready(function ()
+{
+//Dropdownlist Selectedchange event
+    $("#District").change(function ()
+    {
+        
+        $.ajax({
+            type:'POST',
+            url: '@Url.Action("GetCity")',
+            dataType: 'json',
+            data: { id: $("#District").val() },
+            success: function (states)
+            {
+                // states contains the JSON formatted list
+                // of states passed from the controller
+                $.each(states, function (i, state)
+                {
+                    $("#state_id").append('<option value="'
+                    + state.ID + '">'
+                    + state.City + '</option>');
+                });
+            },
+            
+        });
+        return false;
+    })
+});
+</script>
+
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="District" class="control-label"></label>
+                <select asp-for="District" id="District" name ="District" class="form-control"></select>
+                <span asp-validation-for="District" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="City" class="control-label"></label>
+                <select asp-for="City" id="City" name="City" class="form-control"></select>
+                <span asp-validation-for="City" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Adress" class="control-label"></label>
+                <input asp-for="Adress" class="form-control"/>
+                <span asp-validation-for="Adress" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+

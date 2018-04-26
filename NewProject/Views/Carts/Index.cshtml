@@ -1,0 +1,37 @@
+﻿@model NewProject.Models.Cart
+<h2>Ваша корзина</h2>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Кол-во</th>
+            <th>Игра</th>
+            <th class="text-right">Цена</th>
+            <th class="text-right">Общая цена</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var line in Model.Lines)
+        {
+            <tr>
+                <td class="text-center">@line.Quantity</td>
+                <td class="text-left">@line.MyFilm.Name</td>
+                <td class="text-right">@line.MyFilm.Price</td>
+                <td class="text-right">
+                    @((line.Quantity * Double.Parse(line.MyFilm.Price)).ToString())
+                </td>
+            </tr>
+        }
+    </tbody>
+    <tfoot>
+        <tr>
+            <td colspan="3" class="text-right">Итого:</td>
+            <td class="text-right">
+                @Model.ComputeTotalValue().ToString()
+            </td>
+        </tr>
+    </tfoot>
+</table>
+
+<div class="text-center">
+    <a class="btn btn-primary" href="Films/Index">Продолжить покупки</a>
+</div>

@@ -96,7 +96,7 @@
                 <div class="product-info">
                     <div class="product-info-cust">
                         <a asp-action="Details" asp-route-id="@item.ID">Details </a>| 
-                        <a asp-action="Buy" asp-route-id="@item.ID"> Buy</a>
+                        
                     </div>
                     <div class="product-info-price">
                         <a href=Films/Details/@item.ID>$@Html.DisplayFor(modelItem => item.Price)</a>
@@ -113,6 +113,14 @@
 
                     }
                 </div>
+                @using (Html.BeginForm("AddFilm", "Carts"))
+                {
+                    <div class="pull-right">
+                        @Html.Hidden("filmID",@item.ID)
+                        
+                        <input type="submit" class="btn btn-success" value="Добавить в корзину" />
+                    </div>
+                }
             </div>
         }
     

@@ -33,7 +33,8 @@ namespace NewProject
 
             services.AddScoped<IRepository, ApplicationDbContext>();
             // Add application services.
-           
+            services.AddDistributedMemoryCache();
+            services.AddSession();
 
             services.AddMvc();
         }
@@ -51,6 +52,8 @@ namespace NewProject
             {
                 app.UseExceptionHandler("/Home/Error");
             }
+
+            app.UseSession();
             IServiceScopeFactory scopeFactory = app.ApplicationServices.GetRequiredService<IServiceScopeFactory>();
             IServiceScope scope = scopeFactory.CreateScope();
 

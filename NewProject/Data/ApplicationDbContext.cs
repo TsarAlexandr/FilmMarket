@@ -54,5 +54,9 @@ namespace NewProject.Data
         public DbSet<NewProject.Models.Film> Film { get; set; }
 
         public List<Film> Films => this.Film.ToList();
+
+        public DbSet<NewProject.Models.Order> Order { get; set; }
+
+        public DbSet<NewProject.Models.Cities> Cities { get; set; }
     }
 }

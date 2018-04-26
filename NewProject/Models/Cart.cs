@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 
 namespace NewProject.Models
 {
+    [Serializable]
     public class Cart
     {
         private List<CartLine> lines = new List<CartLine>();
@@ -12,7 +13,7 @@ namespace NewProject.Models
         public void AddItem(Film film, int quantity)
         {
             var res = lines.FirstOrDefault(x => x.MyFilm.ID == film.ID);
-            if (res != null)
+            if (res == null)
             {
                 lines.Add(new CartLine() { MyFilm = film, Quantity = quantity });
             }
