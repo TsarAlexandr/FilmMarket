@@ -1,4 +1,5 @@
 ﻿@model NewProject.Models.Order
+@inject NewProject.Data.ApplicationDbContext _context
 
 @{
     ViewData["Title"] = "Create";
@@ -8,36 +9,8 @@
 
 <h4>Order</h4>
 <hr />
+<script src="~/js/jquery-1.11.1.min.js"></script>
 
-<script>
-$(document).ready(function ()
-{
-//Dropdownlist Selectedchange event
-    $("#District").change(function ()
-    {
-        
-        $.ajax({
-            type:'POST',
-            url: '@Url.Action("GetCity")',
-            dataType: 'json',
-            data: { id: $("#District").val() },
-            success: function (states)
-            {
-                // states contains the JSON formatted list
-                // of states passed from the controller
-                $.each(states, function (i, state)
-                {
-                    $("#state_id").append('<option value="'
-                    + state.ID + '">'
-                    + state.City + '</option>');
-                });
-            },
-            
-        });
-        return false;
-    })
-});
-</script>
 
 <div class="row">
     <div class="col-md-4">
@@ -45,13 +18,15 @@ $(document).ready(function ()
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
                 <label asp-for="District" class="control-label"></label>
-                <select asp-for="District" id="District" name ="District" class="form-control"></select>
+                <select asp-for="District" asp-items="Html.GetEnumSelectList<Districts>()" class="form-control"></select>
                 <span asp-validation-for="District" class="text-danger"></span>
+              
             </div>
             <div class="form-group">
                 <label asp-for="City" class="control-label"></label>
                 <select asp-for="City" id="City" name="City" class="form-control"></select>
                 <span asp-validation-for="City" class="text-danger"></span>
+                <a asp-action="CreateCity">Add new City</a>
             </div>
             <div class="form-group">
                 <label asp-for="Adress" class="control-label"></label>
@@ -69,3 +44,27 @@ $(document).ready(function ()
     <a asp-action="Index">Back to List</a>
 </div>
 
+<script type="text/javascript">
+
+
+    $('#District').change(function () {
+        alert($("#District").val().toString());
+                        $.ajax({
+                            type: 'POST',
+                            url: '@Url.Action("GetCity")',
+                            dataType: 'json',
+                            data: { id: $("#District").val() },
+                            success: function (states) {
+                                
+                                $.each(states, function (i, state) {
+                                    $("#City").append('<option value="'
+                                        + state.ID + '">'
+                                        + state.City + '</option>');
+                                });
+                            },
+
+                        });
+                        return false;
+                    });
+
+</script>

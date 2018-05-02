@@ -29,7 +29,7 @@ namespace NewProject.Controllers
             {
                 GetCart().AddItem(film, 1);
             }
-            return RedirectToAction("Index", "Films");
+            return RedirectToAction("Index", "Carts");
 
         }
 

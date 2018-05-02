@@ -22,9 +22,10 @@ namespace NewProject.Controllers
         
 
         [HttpPost]
-        public JsonResult GetCity(Districts district)
+        public JsonResult GetCity(int id)
         {
-            List<Cities> cities = _context.Cities.Where(city => city.District == district).ToList();
+            Districts districts = (Districts)Enum.GetValues(typeof(Districts)).GetValue(id);
+            List<Cities> cities = _context.Cities.Where(city => city.District == districts).ToList();
             return Json(cities);
         }
        
@@ -38,17 +39,23 @@ namespace NewProject.Controllers
 
         public IActionResult CreateCity()
         {
-            return View("City");
+            return View();
         }
+
+        // POST: Cities/Create
+        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
+        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult CreateCity([Bind("District","City")] Cities city)
+        public IActionResult CreateCity([Bind("ID,District,City")] Cities cities)
         {
             if (ModelState.IsValid)
             {
-                _context.Cities.Add(city);
+                _context.Add(cities);
+                _context.SaveChanges();
+                
             }
-            return View("City");
+            return View(cities);
         }
 
         //[HttpPost]
