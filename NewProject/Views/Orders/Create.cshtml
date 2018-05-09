@@ -9,7 +9,7 @@
 
 <h4>Order</h4>
 <hr />
-<script src="~/js/jquery-1.11.1.min.js"></script>
+
 
 
 <div class="row">
@@ -24,7 +24,7 @@
             </div>
             <div class="form-group">
                 <label asp-for="City" class="control-label"></label>
-                <select asp-for="City" id="City" name="City" class="form-control"></select>
+                <select asp-for="City"  class="form-control"><option>Select City</option></select>
                 <span asp-validation-for="City" class="text-danger"></span>
                 <a asp-action="CreateCity">Add new City</a>
             </div>
@@ -44,31 +44,29 @@
     <a asp-action="Index">Back to List</a>
 </div>
 
-<script type="text/javascript">
-
+<script src="~/js/jquery-1.11.1.min.js"></script>
+<script >
 
     $('#District').change(function () {
-        
-        $('#City').empty();
-                        $.ajax({
-                            type: 'POST',
-                            url: '@Url.Action("GetCity")',
-                            dataType: 'json',
-                            data: { id: $("#District").val() },
-                            success: function (cities) {
-                               alert(cities[0].Title)
-                                for (var state in cities)
-                                {
-                                    
-                                    $("#City").append('<option value="'
-                                        + state.ID + '">'
-                                        + state + '</option>');
-                                }
-                                
-                            },
 
-                        });
-                        return false;
-                    });
-      
+        $('#City').empty();
+        $.ajax({
+            type: 'GET',
+            url: '@Url.Action("getCity")',
+            dataType: 'json',
+            data: { id: $("#District").val() },
+            success: function (data) {
+                var items = '';
+                $.each(data, function (i, row) {
+
+                    items += '<option value="' + row.value + '">' + row.text + '</option>';
+                });
+
+                $('#City').html(items);
+
+            },
+        });
+        return false;
+    });
+
 </script>

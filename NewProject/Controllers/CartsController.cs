@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using NewProject.Models;
 using NewProject.Data;
+using Microsoft.AspNetCore.Authorization;
 
 namespace NewProject.Controllers
 {
@@ -16,11 +17,12 @@ namespace NewProject.Controllers
         {
             repo = repos;
         }
+        [Authorize]
         public IActionResult Index()
         {
             return View(GetCart());
         }
-
+        [Authorize]
         [HttpPost]
         public IActionResult AddFilm(int filmID)
         {
@@ -35,7 +37,7 @@ namespace NewProject.Controllers
             return RedirectToAction("Index", "Carts");
 
         }
-
+        [Authorize]
         [HttpPost]
         public IActionResult RemoveFilm(int filmID)
         {

@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using NewProject.Data;
 using NewProject.Models;
+using Newtonsoft.Json;
 
 namespace NewProject.Controllers
 {
@@ -19,18 +20,16 @@ namespace NewProject.Controllers
             _context = context;
         }
 
-        
-
-        [HttpPost]
-        public JsonResult GetCity(int id)
+        public JsonResult getCity(int id)
         {
             Districts districts = (Districts)Enum.GetValues(typeof(Districts)).GetValue(id);
-            IEnumerable<Cities> cities = _context.Cities.Where(city => city.District == districts);
-            return  Json(cities); 
-            
+            List<Cities> list = new List<Cities>();
+            list = _context.Cities.Where(city => city.District == districts).ToList();
+            return Json(new SelectList(list, "ID", "City"));
         }
 
-        
+
+
         // GET: Orders/Create
         public IActionResult Create()
         {
