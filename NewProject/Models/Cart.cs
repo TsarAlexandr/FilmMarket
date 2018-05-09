@@ -8,8 +8,8 @@ namespace NewProject.Models
     [Serializable]
     public class Cart
     {
-        private List<CartLine> lines = new List<CartLine>();
-
+        private List<CartLine> lines;
+        
         public void AddItem(Film film, int quantity)
         {
             var res = lines.FirstOrDefault(x => x.MyFilm.ID == film.ID);
@@ -36,10 +36,16 @@ namespace NewProject.Models
             lines.Clear();
         }
 
-        public IEnumerable<CartLine> Lines
+        public List<CartLine> Lines
         {
             get {
                 return lines;
+            }
+            set {
+                if (lines == null)
+                {
+                    lines = value;
+                }
             }
         }
 

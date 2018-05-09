@@ -27,8 +27,11 @@ namespace NewProject.Controllers
             var film = repo.getFilmById(filmID);
             if (film != null)
             {
-                GetCart().AddItem(film, 1);
+                var cart = GetCart();
+                cart.AddItem(film, 1);
+                HttpContext.Session.Set("Cart", cart);
             }
+            
             return RedirectToAction("Index", "Carts");
 
         }
@@ -51,7 +54,7 @@ namespace NewProject.Controllers
             if (cart == null)
             {
                 cart = new Cart();
-                HttpContext.Session.Set("Cart", cart);
+                cart.Lines = new List<CartLine>();                
             }
             return cart;
         }

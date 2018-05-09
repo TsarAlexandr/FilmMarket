@@ -48,23 +48,27 @@
 
 
     $('#District').change(function () {
-        alert($("#District").val().toString());
+        
+        $('#City').empty();
                         $.ajax({
                             type: 'POST',
                             url: '@Url.Action("GetCity")',
                             dataType: 'json',
                             data: { id: $("#District").val() },
-                            success: function (states) {
-                                
-                                $.each(states, function (i, state) {
+                            success: function (cities) {
+                               alert(cities[0].Title)
+                                for (var state in cities)
+                                {
+                                    
                                     $("#City").append('<option value="'
                                         + state.ID + '">'
-                                        + state.City + '</option>');
-                                });
+                                        + state + '</option>');
+                                }
+                                
                             },
 
                         });
                         return false;
                     });
-
+      
 </script>

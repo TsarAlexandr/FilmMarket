@@ -25,12 +25,12 @@ namespace NewProject.Controllers
         public JsonResult GetCity(int id)
         {
             Districts districts = (Districts)Enum.GetValues(typeof(Districts)).GetValue(id);
-            List<Cities> cities = _context.Cities.Where(city => city.District == districts).ToList();
-            return Json(cities);
+            IEnumerable<Cities> cities = _context.Cities.Where(city => city.District == districts);
+            return  Json(cities); 
+            
         }
-       
 
-
+        
         // GET: Orders/Create
         public IActionResult Create()
         {
