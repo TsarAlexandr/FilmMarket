@@ -1,4 +1,7 @@
-
+.bodyStart {
+    background-color:white;
+    background-image:none;
+}
 .equalses {
     border:3px solid black;
     margin:10px 100px 300px 100px;
@@ -21,8 +24,12 @@
         text-align:center;
     }
 
+.add_button {
+    margin-right: 20px;
+}
 .adm-option {
     float:left;
+    margin-top:30%;
     border-top:1px solid #000;
 
 }
@@ -85,11 +92,13 @@
         color: black;
     }
 .films-grid {
-    width: 30%;
+    width: 342px;
+    height: 358.8px;
     margin: 0 3% 4% 0;
     float: left;
     border: 3px solid #175100;
     position: relative;
+    background-color:azure;
 }
 
 .films-grid h2 {
@@ -104,6 +113,7 @@
     float:right;
     min-width:150px;
     max-width:300px;
+    
     }
 .container_wrap{
 	padding:5em 0;
@@ -158,4 +168,8 @@ right:10%;
 .foot-text p {
     text-align:center;
     font-size:20px;
+}
+.description {
+    width:336px;
+    height:40px;
 }

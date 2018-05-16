@@ -36,37 +36,28 @@ namespace NewProject.Controllers
             return View();
         }
 
-        public IActionResult CreateCity()
-        {
-            return View();
-        }
-
-        // POST: Cities/Create
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
+        
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult CreateCity([Bind("ID,District,City")] Cities cities)
+        public IActionResult Create([Bind("District,Adress")]Order order, int city)
         {
             if (ModelState.IsValid)
             {
-                _context.Add(cities);
-                _context.SaveChanges();
-                
-            }
-            return View(cities);
-        }
+                order.City = _context.Cities.FirstOrDefault(x => x.ID == city);
+                var cart = HttpContext.Session.Get<Cart>("Cart");
+                if (cart != null)
+                {
+                    cart.Clear();
+                    HttpContext.Session.Set("Cart", cart);
+                }
 
-        //[HttpPost]
-        //[ValidateAntiForgeryToken]
-        //public IActionResult Create()
-        //{
-        //    if (ModelState.IsValid)
-        //    {
-        //        TempData = "Order Passed!";
-        //    }
-        //    return View(order);
-        //}
+                TempData["message"] = "Order Passed! Address:" + order.District.ToString() + " "
+                    + order.City.City.ToString() + " " +
+                    order.Adress.ToString();
+                return RedirectToAction("Index", "Home");
+            }
+            return View(order);
+        }
 
         private bool OrderExists(int id)
         {

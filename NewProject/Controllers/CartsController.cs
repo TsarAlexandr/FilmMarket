@@ -22,7 +22,18 @@ namespace NewProject.Controllers
         {
             return View(GetCart());
         }
-        [Authorize]
+
+        public IActionResult getOrder()
+        {
+            var cart = GetCart();
+            if (cart.Lines.Count == 0)
+            {
+                TempData["error"] = "You should have no less then ONE film in your basket, to get Order";
+                return View("Index",cart);
+            }
+            return RedirectToAction("Create","Orders");
+        }
+
         [HttpPost]
         public IActionResult AddFilm(int filmID)
         {
@@ -44,7 +55,9 @@ namespace NewProject.Controllers
             var film = repo.getFilmById(filmID);
             if (film != null)
             {
-                GetCart().RemoveLine(film);
+                var cart = GetCart();
+                cart.RemoveLine(film);
+                HttpContext.Session.Set("Cart", cart);
             }
             return RedirectToAction("Index");
 

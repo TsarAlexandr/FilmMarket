@@ -45,3 +45,4 @@ function resizeUp(object)
         object.style.width = toPx(width + resizeCoef * (maxwidth - width));
     }, updateInterval);
 }
+

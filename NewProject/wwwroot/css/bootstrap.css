@@ -273,18 +273,19 @@ html {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 body {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 14px;
-  line-height: 1.42857143;
-  color: #333;
-  background-color: #fff;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #333;
+    
+    background-image: url('../images/banner4.jpg');
 }
 input,
 button,
 select,
 textarea {
   font-family: inherit;
-  font-size: inherit;
+  font-size: 15px;
   line-height: inherit;
 }
 a {
@@ -4457,6 +4458,8 @@ a.thumbnail.active {
   color: #3c763d;
   background-color: #dff0d8;
   border-color: #d6e9c6;
+  font-size:20px;
+  text-align:center;
 }
 .alert-success hr {
   border-top-color: #c9e2b3;

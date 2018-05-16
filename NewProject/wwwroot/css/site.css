@@ -1,6 +1,7 @@
 ﻿body {
     padding-top: 50px;
     padding-bottom: 20px;
+    background-image: url('../images/banner4.jpg');
 }
 
 /* Wrapping element */
@@ -8,13 +9,25 @@
 .body-content {
     padding-left: 15px;
     padding-right: 15px;
-}
+    background-color:darkgray;
 
-/* Carousel */
-.carousel-caption p {
-    font-size: 20px;
-    line-height: 1.4;
 }
+.search_area {
+    padding-left: 550px;
+    padding-right: 100px;
+    padding-top:20px;
+    font-size: 14px;
+}
+    .search_area input[type=submit] {
+        background-color: green;
+        font-size: 14px;
+    }
+    
+    /* Carousel */
+    .carousel-caption p {
+        font-size: 20px;
+        line-height: 1.4;
+    }
 
 /* Make .svg files in the carousel display properly in older browsers */
 .carousel-inner .item img[src$=".svg"] {

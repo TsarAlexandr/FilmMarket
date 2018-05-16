@@ -23,7 +23,11 @@ namespace NewProject.Models
         }
         public void RemoveLine(Film film)
         {
-            lines.RemoveAll(l => l.MyFilm.ID == film.ID);
+            var res = lines.FirstOrDefault(x => x.MyFilm.ID == film.ID);
+            if (res.Quantity > 1)
+                res.Quantity--; 
+            else
+                lines.RemoveAll(l => l.MyFilm.ID == film.ID);
         }
 
         public double ComputeTotalValue()

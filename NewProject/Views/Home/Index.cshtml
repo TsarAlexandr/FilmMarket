@@ -26,33 +26,33 @@
         });
     </script>
 </head>
-<body>
+<body class="bodyStart">
+   
     <nav class="navbar navbar-inverse navbar-fixed-top">
+        @if (TempData["message"] != null)
+        {
+            <div class="alert alert-success">@TempData["message"]</div>
+        }
         <div class="container">
             <div class="navbar-header">
                 <a asp-area="" asp-controller="Films" asp-action="Index" class="navbar-brand">Films</a>
                 <a asp-area="" asp-controller="Home" asp-action="Index" class="navbar-brand">Home</a>
                 <a asp-area="" asp-controller="Home" asp-action="About" class="navbar-brand">About</a>
                 <a asp-area="" asp-controller="Home" asp-action="Contact" class="navbar-brand">Contact</a>
-                <a asp-area="" asp-controller="Home" asp-action="Navigator" class="navbar-brand">Lab2</a>
-
+                @*<a asp-area="" asp-controller="Home" asp-action="Navigator" class="navbar-brand">Lab2</a>*@
+                @if (SignInManager.IsSignedIn(User) && User.IsInRole("admin"))
+                {
+                    <a asp-area="" asp-controller="Cities" asp-action="Index" class="navbar-brand">Cities</a>
+                }
             </div>
             <div class="navbar-collapse collapse">
                 @await Html.PartialAsync("_LoginPartial")
             </div>
 
-            </div>
- </nav>
-    <form asp-controller="Films" asp-action="Index1" method="get">
-        <div class="search">
-            <p>
-                <h3>Search by Models</h3>
-                <input type="text" name="Search">
-                <input type="submit" value="Search" />
-            </p>
-        </div>
-    </form>
-                    
+         </div>
+  </nav>
+   
+                       
                           <ul class="rslides" id="slider">
                                 <li>
                                     <img src="images/banner.jpg" class="img-responsive" alt="" />

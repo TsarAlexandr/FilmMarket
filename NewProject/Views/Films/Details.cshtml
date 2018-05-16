@@ -13,32 +13,7 @@
 <div>
     <h4>Film</h4>
     <hr />
-    @*<dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Rating)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.Rating)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.Name)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.Name)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.Description)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.Description)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.Price)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.Price)
-        </dd>
-    </dl>*@
+   
 </div>
 
 <div class="details">
@@ -66,7 +41,14 @@
             $@Html.DisplayFor(model => model.Price)
         </dd>
     </dl>
+    @using (Html.BeginForm("AddFilm", "Carts"))
+    {
+        <div class="pull-left">
+            @Html.Hidden("filmID", @Model.ID)
+            <input type="submit" class="btn btn-success" value="Add to Cart" />
 
+        </div>
+    }
 
 
 
