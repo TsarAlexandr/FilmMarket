@@ -120,6 +120,13 @@ namespace NewProject.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Logout()
         {
+            var cart = HttpContext.Session.Get<Cart>("Cart");
+            if (cart != null)
+            {
+                cart.Clear();
+                HttpContext.Session.Set("Cart", cart);
+            }
+
             await _signInManager.SignOutAsync();
             
             return RedirectToAction(nameof(HomeController.Index), "Home");
